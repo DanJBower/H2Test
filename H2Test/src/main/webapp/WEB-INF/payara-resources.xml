@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources PUBLIC "-//Payara.fish//DTD Payara Server 4 Resource Definitions//EN" "https://raw.githubusercontent.com/payara/Payara-Community-Documentation/master/docs/modules/ROOT/pages/schemas/payara-resources_1_6.dtd">
+<resources>
+    <jdbc-resource pool-name="TestDb"
+                   jndi-name="java:app/TestDb"
+                   enabled="true" />
+
+    <jdbc-connection-pool datasource-classname="org.h2.jdbcx.JdbcDataSource"
+                          name="TestDb"
+                          res-type="javax.sql.DataSource">
+        <property name="URL" value="jdbc:h2:file:./target/databases/TestDb;AUTO_SERVER=TRUE" />
+        <property name="User" value="sa" />
+        <property name="Password" value="" />
+    </jdbc-connection-pool>
+</resources>
